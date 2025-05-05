@@ -1,0 +1,11 @@
+services:
+  matching-routing-service-database:
+    image: mysql:9.2.0
+    container_name: matching-routing-service-database
+    environment:
+        MYSQL_DATABASE: matching_routing_service
+        MYSQL_USER: user
+        MYSQL_PASSWORD: password
+        MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3315:3306"
