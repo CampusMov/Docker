@@ -21,6 +21,17 @@ services:
     ports:
       - "3320:3306"
 
+  iam-service-database:
+    image: mysql:9.2.0
+    container_name: iam-service-database
+    environment:
+        MYSQL_DATABASE: identity_access_management_service
+        MYSQL_USER: user
+        MYSQL_PASSWORD: password
+        MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3325:3306"
+
   # Kafka and Zookeeper
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
